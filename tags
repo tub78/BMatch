@@ -1,0 +1,174 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+AbstractBmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/include//AbstractBmatchSolver.hpp	/^        AbstractBmatchSolver() : description_str("bmatch interface") { };$/;"	f	class:AbstractBmatchSolver
+AbstractBmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/include//AbstractBmatchSolver.hpp	/^class AbstractBmatchSolver$/;"	c
+Amat	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        SparseVecVec Amat;$/;"	m	class:GreedyApproxBmatch
+BELIEFPROPBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	15;"	d
+B_match	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        EdgeList B_match;$/;"	m	class:GreedyApproxBmatch
+BeliefPropBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^        BeliefPropBmatch() $/;"	f	class:BeliefPropBmatch
+BeliefPropBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^class BeliefPropBmatch : public AbstractBmatchSolver$/;"	c
+BmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/include//BmatchSolver.hpp	/^        BmatchSolver()  $/;"	f	class:BmatchSolver
+BmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/include//BmatchSolver.hpp	/^class BmatchSolver : public AbstractBmatchSolver$/;"	c
+COMPLEMENTARYGOBLINEXACTBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	7;"	d
+CONVERGENCE_INSURANCE	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	136;"	d	file:
+ComplementaryGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        ComplementaryGoblinExactBmatch() $/;"	f	class:ComplementaryGoblinExactBmatch
+ComplementaryGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^class ComplementaryGoblinExactBmatch : public GoblinExactBmatch$/;"	c
+DoubleVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<double>                  DoubleVec;$/;"	t
+DoubleVecConstIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<double>::const_iterator  DoubleVecConstIterator;$/;"	t
+DoubleVecIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<double>::iterator        DoubleVecIterator;$/;"	t
+EdgeList	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^typedef vector<NodePair>            EdgeList;$/;"	t
+GOBLINEXACTBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	5;"	d
+GOBLIN_COST_SCALE	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	13;"	d
+GREEDYAPPROXBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	11;"	d
+GoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        GoblinExactBmatch() $/;"	f	class:GoblinExactBmatch
+GoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^class GoblinExactBmatch : public BmatchSolver $/;"	c
+GreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        GreedyApproxBmatch() $/;"	f	class:GreedyApproxBmatch
+GreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^class GreedyApproxBmatch : public BmatchSolver $/;"	c
+INF	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	12;"	d
+LB_TCap_vec	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        TCap*   LB_TCap_vec;$/;"	m	class:GoblinExactBmatch
+LongIntVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<long>                    LongIntVec;$/;"	t
+LongIntVecConstIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<long>::const_iterator    LongIntVecConstIterator;$/;"	t
+LongIntVecIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<long>::iterator          LongIntVecIterator;$/;"	t
+MAX_ITER	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	135;"	d	file:
+METHOD_NAMES	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	3;"	d
+M_walk	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        EdgeList M_walk;$/;"	m	class:GreedyApproxBmatch
+NEGATEDWEIGHTSGOBLINEXACTBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	9;"	d
+NEG_INF	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	134;"	d	file:
+NegatedWeightsGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        NegatedWeightsGoblinExactBmatch()$/;"	f	class:NegatedWeightsGoblinExactBmatch
+NegatedWeightsGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^class NegatedWeightsGoblinExactBmatch : public GoblinExactBmatch$/;"	c
+NodePair	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^typedef pair<int, int>              NodePair;$/;"	t
+Parameter	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    Parameter() { init_0(); }$/;"	f	class:Parameter
+Parameter	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^class Parameter {$/;"	c
+RECURSIVEGREEDYAPPROXBMATCH	/Users/stu/Research/NetworkPrediction/bmatch/include//method_names.hpp	13;"	d
+RecursiveGreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        RecursiveGreedyApproxBmatch() $/;"	f	class:RecursiveGreedyApproxBmatch
+RecursiveGreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^class RecursiveGreedyApproxBmatch : public GreedyApproxBmatch$/;"	c
+SparseVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^class SparseVec : public map<long, double, less<long> > {$/;"	c
+SparseVecConstIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef SparseVec::const_iterator       SparseVecConstIterator;$/;"	t
+SparseVecElement	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef SparseVec::value_type           SparseVecElement;$/;"	t
+SparseVecIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef SparseVec::iterator             SparseVecIterator;$/;"	t
+SparseVecVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef vector<SparseVec *>             SparseVecVec;$/;"	t
+SparseVecVecConstIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef SparseVecVec::const_iterator    SparseVecVecConstIterator;$/;"	t
+SparseVecVecIterator	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^typedef SparseVecVec::iterator          SparseVecVecIterator;$/;"	t
+UB_TCap_vec	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        TCap*   UB_TCap_vec;$/;"	m	class:GoblinExactBmatch
+Wmat	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        SparseVecVec Wmat;$/;"	m	class:GreedyApproxBmatch
+_ABSTRACT_BMATCH_SOLVER_H_	/Users/stu/Research/NetworkPrediction/bmatch/include//AbstractBmatchSolver.hpp	7;"	d
+_BELIEFPROP_SOLVER_H_	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	7;"	d
+_BMATCH_SOLVER_H_	/Users/stu/Research/NetworkPrediction/bmatch/include//BmatchSolver.hpp	7;"	d
+_GOBLINEXACT_SOLVER_H_	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	7;"	d
+_GREEDYAPPROX_SOLVER_H_	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	7;"	d
+_PARAMETER_	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	2;"	d
+_VECTOR_	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	10;"	d
+accumulate	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^accumulate(const SparseVec * rhs, const double s)$/;"	f	class:SparseVec
+accumulate_svec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^accumulate_svec(SparseVec * lhs, const SparseVec * rhs, const double scale)$/;"	f	class:SparseVec
+bcap_vec	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        LongIntVec bcap_vec;$/;"	m	class:GreedyApproxBmatch
+beliefs	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  int *beliefs; \/\/current top b node ids$/;"	m	struct:node_t_struct
+bmatch_ijw	/Users/stu/Research/NetworkPrediction/bmatch//bmatch_ijw.m	/^function [ijw_out,wgt,deg_out] = bmatch_ijw(ijw_in,deg_bdd,in_method,in_verbose)$/;"	f
+bmatch_matrix	/Users/stu/Research/NetworkPrediction/bmatch//bmatch_matrix.m	/^function [Ymat, wgt, deg_out] = bmatch_matrix(W, deg_bdd, in_method, in_verbose)$/;"	f
+check_parameters	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^check_parameters()$/;"	f	class:Parameter
+const_b	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    int     const_b;$/;"	m	class:Parameter
+deg_vec	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        LongIntVec deg_vec;$/;"	m	class:GreedyApproxBmatch
+degrees	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    string  degrees;$/;"	m	class:Parameter
+delete_svecvec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void delete_svecvec(SparseVecVec & spmat)$/;"	f
+description	/Users/stu/Research/NetworkPrediction/bmatch/src//AbstractBmatchSolver.cpp	/^description()$/;"	f	class:AbstractBmatchSolver
+description_str	/Users/stu/Research/NetworkPrediction/bmatch/include//AbstractBmatchSolver.hpp	/^        string description_str;$/;"	m	class:AbstractBmatchSolver
+diffVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline vector<T> diffVec(const vector<T> & x, const vector<T> & y) $/;"	f
+dot	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^dot(const SparseVec * rhs) const$/;"	f	class:SparseVec
+dot_svec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^dot_svec(const SparseVec * lhs, const SparseVec * rhs)$/;"	f	class:SparseVec
+eq_svec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^eq_svec(const SparseVec * lhs, const SparseVec * rhs)$/;"	f	class:SparseVec
+findVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline vector<T> findVec(const vector<T> & x) $/;"	f
+freeNode	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^void freeNode(node_t *node)$/;"	f
+getArgs	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^getArgs(const string & cmdline, int & argc, char **& argv)$/;"	f	class:Parameter
+gptr	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        abstractGraph*  gptr;$/;"	m	class:GoblinExactBmatch
+hash_entry_type	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^typedef hash_map_type::value_type   hash_entry_type;$/;"	t
+hash_map_type	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^typedef map<int,int>                hash_map_type;$/;"	t
+id	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  int id;$/;"	m	struct:node_t_struct
+ijw_2_matrix	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_2_matrix(const int & num_ijw, const DoubleVec & ijw_vec, const int & M, const int & N, DoubleVec & elements_vec)$/;"	f
+ijw_2_svecvec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_2_svecvec(const int & num_ijw, const DoubleVec & ijw_vec, const int & num_node, SparseVecVec & spmat)$/;"	f
+ijw_2_svecvec_symm	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_2_svecvec_symm(const int & num_ijw, const DoubleVec & ijw_vec, const int & num_node, SparseVecVec & spmat)$/;"	f
+ijw_add_upper_tri_transpose	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_add_upper_tri_transpose(int & num_ijw, DoubleVec & ijw_vec, const int & exclude_diagonal)$/;"	f
+ijw_nnz	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_nnz(int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+ijw_read_ijw	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_read_ijw(istream & in, int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+ijw_read_matrix	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_read_matrix(istream & in, int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+ijw_transpose	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_transpose(int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+ijw_upper_tri	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_upper_tri(int & num_ijw, DoubleVec & ijw_vec, int exclude_diagonal)$/;"	f
+ijw_write_ijw	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_write_ijw(ostream & out, const int & num_ijw, const DoubleVec & ijw_vec, const int & width)$/;"	f
+ijw_write_matrix	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void ijw_write_matrix(ostream & out, const int & num_node, const int & num_ijw, const DoubleVec & ijw_vec, const int & width)$/;"	f
+init	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^init(const string & cmdline)$/;"	f	class:Parameter
+init	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^init(int argc, char* argv[])$/;"	f	class:Parameter
+init	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^init(const int & in_verbose, const int& in_num_node, const DoubleVec & deg_bdd_vec, const int & in_num_ijw, const DoubleVec & ijw_vec)$/;"	f	class:GoblinExactBmatch
+init	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^init(const int & in_verbose, const int& in_num_node, const DoubleVec & deg_bdd_vec, const int & in_num_ijw, const DoubleVec & ijw_vec) $/;"	f	class:GreedyApproxBmatch
+initNode	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^node_t * initNode(int n, int id, int b, int total)$/;"	f
+init_0	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^init_0()$/;"	f	class:Parameter
+init_const_degrees	/Users/stu/Research/NetworkPrediction/bmatch/src//bmatch.cpp	/^void init_const_degrees(const int & num_node, DoubleVec & deg_bdd_vec, const double & b)$/;"	f
+logical_svecvec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void logical_svecvec(SparseVecVec & spmat)$/;"	f
+main	/Users/stu/Research/NetworkPrediction/bmatch/src//bmatch.cpp	/^int main(int argc, char *argv[])$/;"	f
+matrix_2_ijw	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void matrix_2_ijw(const int & M, const int & N, const DoubleVec & elements_vec, int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+maxVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double maxVec(const vector<T> & x) $/;"	f
+meanVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double meanVec(const vector<T> & x) $/;"	f
+message	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  double *message; \/\/vector of messages from this node to all other nodes$/;"	m	struct:node_t_struct
+method	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    int     method;$/;"	m	class:Parameter
+mexFunction	/Users/stu/Research/NetworkPrediction/bmatch/src//bmatch_ijw_mex.cpp	/^void mexFunction( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] )$/;"	f
+minVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double minVec(const vector<T> & x) $/;"	f
+myLogEventHandler	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^void myLogEventHandler(msgType msg,TModule mod,THandle OH,char *logText)$/;"	f
+my_malloc	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^my_malloc(long size)$/;"	f	class:Parameter
+neighborhood	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  int neighborhood; \/\/number of neighbors (not counting itself)$/;"	m	struct:node_t_struct
+neighbors	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  struct node_t_struct **neighbors; \/\/vector of pointers to neighbors$/;"	m	struct:node_t_struct
+neq_svec	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^neq_svec(const SparseVec * lhs, const SparseVec * rhs)$/;"	f	class:SparseVec
+node_t	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^} node_t;$/;"	t
+node_t_struct	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^typedef struct node_t_struct {$/;"	s
+normSqrVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double normSqrVec(const vector<T> & x) $/;"	f
+num_ijw	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        int num_ijw;$/;"	m	class:GoblinExactBmatch
+num_ijw	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        int num_ijw;$/;"	m	class:GreedyApproxBmatch
+num_node	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        int num_node;$/;"	m	class:GoblinExactBmatch
+num_node	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        int num_node;$/;"	m	class:GreedyApproxBmatch
+output	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    string  output;$/;"	m	class:Parameter
+pDeleteVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline void pDeleteVec(vector<T> & x) $/;"	f
+pReleaseVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline void pReleaseVec(vector<T> & x) $/;"	f
+pchar	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    typedef char* pchar;$/;"	t	class:Parameter
+permCheck	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^int permCheck(node_t **nodes, int**P, int n, int b) $/;"	f
+phi	/Users/stu/Research/NetworkPrediction/bmatch/include//beliefprop.hpp	/^  double *phi;   \/\/potential$/;"	m	struct:node_t_struct
+print	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^print() $/;"	f	class:Parameter
+print	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^print(const int & print_what)$/;"	f	class:GoblinExactBmatch
+print	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^print(const int & print_what)$/;"	f	class:GreedyApproxBmatch
+printVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline void printVec(ostream & os, const vector<T> & x, const char * sep = " ")$/;"	f
+print_help	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^print_help()$/;"	f	class:Parameter
+read_degrees	/Users/stu/Research/NetworkPrediction/bmatch/src//bmatch.cpp	/^void read_degrees(istream & in, int & num_node, DoubleVec & deg_bdd_vec)$/;"	f
+read_mn_matrix	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void read_mn_matrix(istream & in, int & M, int & N, DoubleVec & elements_vec)$/;"	f
+scale_weight	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^scale_weight(const int & num_ijw, DoubleVec & ijw_vec, const double & min1, const double & max1)$/;"	f	class:GoblinExactBmatch
+solution	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^solution(const int & num_bmatch_edge, DoubleVec & bmatch_edge_vec)$/;"	f	class:GoblinExactBmatch
+solution	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^solution(const int & num_bmatch_edge, DoubleVec & bmatch_edge_vec) $/;"	f	class:GreedyApproxBmatch
+solve	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^int solve(int num_input_edge, double * input_edge_ptr, int num_input_node, int node_cap, double * output_edge_ptr, int verbose) $/;"	f
+solve	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^solve()$/;"	f	class:GoblinExactBmatch
+solve	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^solve() $/;"	f	class:GreedyApproxBmatch
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//AbstractBmatchSolver.cpp	/^solve_bmatching_problem(const int & num_node, const DoubleVec & deg_bdd_vec, const int & num_ijw, const DoubleVec & ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:AbstractBmatchSolver
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//BmatchSolver.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:BmatchSolver
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:BeliefPropBmatch
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:ComplementaryGoblinExactBmatch
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:GoblinExactBmatch
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:NegatedWeightsGoblinExactBmatch
+solve_bmatching_problem	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^solve_bmatching_problem(const int & in_num_node, const DoubleVec & in_deg_bdd_vec, const int & in_num_ijw, const DoubleVec & in_ijw_vec, int & num_bmatch_edge, DoubleVec & bmatch_edge_vec, double & bmatch_wgt, const int & verbose)$/;"	f	class:RecursiveGreedyApproxBmatch
+sparse	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    int     sparse;$/;"	m	class:Parameter
+sqrVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline vector<T> sqrVec(const vector<T> & x) $/;"	f
+sumVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double sumVec(const vector<T> & x) $/;"	f
+svecvec_2_ijw	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void svecvec_2_ijw(const int & num_node, const SparseVecVec & spmat, int & num_ijw, DoubleVec & ijw_vec)$/;"	f
+unrecognizedOptionError	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^unrecognizedOptionError(const char * opt_str)$/;"	f	class:Parameter
+updateMessages	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^void updateMessages(node_t *node, int b)$/;"	f
+varVec	/Users/stu/Research/NetworkPrediction/bmatch/include//Vector.hpp	/^template <class T> inline double varVec(const vector<T> & x, const double & mean) $/;"	f
+verbose	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    int     verbose;$/;"	m	class:Parameter
+verbose	/Users/stu/Research/NetworkPrediction/bmatch/include//goblinexact.hpp	/^        int verbose;$/;"	m	class:GoblinExactBmatch
+verbose	/Users/stu/Research/NetworkPrediction/bmatch/include//greedyapprox.hpp	/^        int verbose;$/;"	m	class:GreedyApproxBmatch
+verbosity	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    int verbosity()  { return 1; };$/;"	f	class:Parameter
+weights	/Users/stu/Research/NetworkPrediction/bmatch/include//Parameter.hpp	/^    string  weights;$/;"	m	class:Parameter
+write_mn_matrix	/Users/stu/Research/NetworkPrediction/bmatch/src//Vector.cpp	/^void write_mn_matrix(ostream & out, const int & M, const int & N, const DoubleVec & elements_vec, const int & width)$/;"	f
+~AbstractBmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/include//AbstractBmatchSolver.hpp	/^        virtual ~AbstractBmatchSolver() { };$/;"	f	class:AbstractBmatchSolver
+~BeliefPropBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//beliefprop.cpp	/^~BeliefPropBmatch()$/;"	f	class:BeliefPropBmatch
+~BmatchSolver	/Users/stu/Research/NetworkPrediction/bmatch/src//BmatchSolver.cpp	/^~BmatchSolver()$/;"	f	class:BmatchSolver
+~ComplementaryGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^~ComplementaryGoblinExactBmatch()$/;"	f	class:ComplementaryGoblinExactBmatch
+~GoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^~GoblinExactBmatch()$/;"	f	class:GoblinExactBmatch
+~GreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^~GreedyApproxBmatch()$/;"	f	class:GreedyApproxBmatch
+~NegatedWeightsGoblinExactBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//goblinexact.cpp	/^~NegatedWeightsGoblinExactBmatch()$/;"	f	class:NegatedWeightsGoblinExactBmatch
+~RecursiveGreedyApproxBmatch	/Users/stu/Research/NetworkPrediction/bmatch/src//greedyapprox.cpp	/^~RecursiveGreedyApproxBmatch()$/;"	f	class:RecursiveGreedyApproxBmatch

@@ -1,0 +1,477 @@
+<html>
+<head>
+<link rel=StyleSheet href="../styles/std-theme.css" type="text/css" media=screen>
+<link rel=StyleSheet href="../styles/page.css" type="text/css" media=screen>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Generalized Matching Code</title>
+</head>
+
+<body class=std>
+
+<a name=photo>&nbsp;</a>
+<table width="100%">
+<tr>
+    <td valign="top">
+        <img src="../media/cloudnine071212.jpg">
+<p>
+</p>
+	<img src="../media/email_2.jpg">
+    </td>
+
+    <td valign="top"> <!-- begin main body -->
+
+
+<div class=btimes120page>
+Generalized Matching Code
+</div>
+
+<p class=page> 
+A command-line tool for solving <em>generalized matching</em> problems (a.k.a. <em>b-matchings</em>, or <em>degree-constrained subgraphs</em>) is available <a href="../pub/bmatch.tgz">here</a>.  The archive contains binaries for Linux and MacOSX.  There is also a precompiled MEX interface for Matlab.  To get started follow these instructions.  There's a <a href="../pub/README_bmatch">README</a> with more details if you have questions, or if things do not work as expected.
+</p>
+<table class=page width="100%">
+<tr>
+    <td width="50%" valign="top" align="left">
+<div class=btimes120>
+Command-line tool
+</div>
+<pre>
+<div class=code>
+tar xvfz bmatch.tgz
+cd bmatch
+make
+./bmatch -h
+
+</div>
+</pre>
+    </td>
+    <td width="50%" valign="top" align="left">
+<div class=btimes120>
+Matlab tool
+</div>
+<pre>
+<div class=code>
+tar xvfz bmatch.tgz
+cd bmatch
+make
+./matlab_bmatch
+help bmatch
+</div>
+</pre>
+    </td>
+</tr>
+</table>
+
+    </td> <!-- end main body -->
+</tr>
+</table>
+
+
+<!-- remainder of the page is full width, no table -->
+
+<h2 class=page>
+Help file
+</h2>
+
+<pre class=page>
+<div class=code>
+Usage> bmatch [-arg1 value] [-arg2 value] ...
+
+Solves:
+       optimize_Yij sum_ij W_ij Y_ij  s.t. l_i <= sum_j Y_ij <= u_i, 1 <= i <= n
+       and Wij and Yij are symmetric
+
+Arguments [with default values]:
+
+            -w -weights [NULL] input file, NULL => std. input
+            -d -degrees [NULL] input file, NULL => std. input
+            -o -output  [NULL] output file, NULL => std. output
+            -l -const_l [-1  ] positive integer, negative => std. input
+            -u -const_u [-1  ] positive integer, negative => std. input
+            -s -sparse  [0   ] 0 => matrix, 1 => IJW input format
+            -m -method  [1   ] selects algorithm
+            -v -verbose [0   ] positive integer
+
+Algorithm: 
+
+    1. exact maxwgt solution using goblin via subgraph complement
+    2. exact mincost solution using goblin
+    3. greedy 1/2 approximation to maxwgt solution
+    4. greedy 1/2 approximation to maxwgt solution with recursion
+    5. bipartite relaxation to maxwgt solution using belief propagation
+
+Notes: 
+
+       Self-loops are handled: a self-loop increases the degree of a node
+       by 2.  Weights must be positive (Wij >= 0).  Edges with zero-weight
+       (Wij==0) are not allowed to partake in the matching.
+
+       If the weights, degrees or output file is not specified, then the
+       corresponding input [output] data is entered in [written to] the
+       display.  The format should match the examples given in the data
+       directory.  Enter a blank line to terminate input of a given data.
+
+       The output weight is calculated as sum_{i<=j} Wij Yij, except when
+       beleif propagation is used, whose output is not necessarily symmetric.
+       For BP, the output weight is 0.5 * sum_{i,j} Wij Yij.
+
+       The lower bounds are ignored by methods 3-5. Bipartite relaxation
+       assumes that the degree upper bounds can be met with equality.
+
+
+For Known Issues and Troubleshooting tips, see the full <a href="../pub/README_bmatch">README</a>.
+
+</div>
+</pre>
+
+<div class=btimes120page> 
+Tutorial
+</div>
+
+<ul class=page>
+
+    <li>
+    <b>example 0</b>: enter 2x2 matrix of weights and specify u_i=1 forall i
+<pre>
+<div class=code>
+-> bmatch
+ INPUT WEIGHTS(dense)>
+1 2
+2 3
+
+ INPUT DEGREES>
+1
+
+ MATCHING>
+    0    1
+    1    0
+</div>
+</pre>
+    </li> 
+
+    <li>
+    <b>example 1</b>: read 4x4 matrix of weights, specify u_i=2 forall i, and specify -v 1 for brief diagnostic output -- there are only 6 input edges because the diagonal weights are zero and therefore are omitted from the graph
+<pre>
+<div class=code>
+-> bmatch -w data/matrix_in_1.txt -v 1 -u 2
+ bmatch_ijw> returning 2 edges
+ MATCHING>
+    0    1    1    0
+    1    0    0    1
+    1    0    0    1
+    0    1    1    0
+ bmatch done:
+       method = exact maxwgt solution using goblin via subgraph complement
+   in # nodes = 4
+   in # edges = 6
+  out # edges = 4
+          wgt = 28
+  time (sec.) = 0
+</div>
+</pre>
+    </li> 
+
+    <li>
+    <b>example 2</b>: now the weight matrix has non-zeros on the diagonal -- notice that degree(0) = degree(1) = degree(2) = degree(3) = 3 which is the upper bound ... experiment with different -u values
+<pre>
+<div class=code>
+-> bmatch -w data/matrix_in_2.txt -v 1 -u 3
+ bmatch_ijw> returning 4 edges
+ MATCHING>
+    0    1    1    1
+    1    0    1    1
+    1    1    0    1
+    1    1    1    0
+ bmatch done:
+       method = exact maxwgt solution using goblin via subgraph complement
+   in # nodes = 4
+   in # edges = 10
+  out # edges = 6
+          wgt = 35
+  time (sec.) = 0
+</div>
+</pre>
+    </li> 
+
+    <li>
+    <b>example 3</b>: using the same matrix, try different -m solvers, e.g. the greedy algorithm (method 3) -- the greedy method is guaranteed to obtain >= 1/2 of the optimal weight, which from the previous example is known to be 34 -- belief propagation (method=5) treats variables Yij as edges in a directed bipartite graph between nodes 0..(N-1) and 0'..(N-1)' -- this can be viewed as a relaxation of the problem stated above -- in particular Yij=1 does not imply Yji=1, and there are no self-loops ... both idiosyncrasies are evident its solution
+<pre>
+<div class=code>
+-> bmatch -w data/matrix_in_2.txt -v 1 -u 3 -m 3
+ bmatch_ijw> returning 5 edges
+ MATCHING>
+    0    0    1    1
+    0    1    0    1
+    1    0    1    0
+    1    1    0    0
+ bmatch done:
+       method = greedy 1/2 approximation to maxwgt solution
+   in # nodes = 4
+   in # edges = 10
+  out # edges = 5
+          wgt = 29
+  time (sec.) = 0
+
+
+
+-> bmatch -w data/matrix_in_2.txt -u 2 -v 1 -m 5
+ beliefprop.solve> Reached maximum iterations without converging
+MATCHING>
+    0    1    1    0
+    1    0    0    1
+    1    0    0    1
+    0    1    0    1
+bmatch done:
+       method = bipartite relaxation to maxwgt solution using belief propagation
+   in # nodes = 4
+   in # edges = 16
+  out # edges = 8
+          wgt = 28.5
+  time (sec.) = 0
+
+</div>
+</pre>
+    </li> 
+
+    <li>
+    <b>example 4</b>: here, graph input and output is in sparse format -s 1 -- have a look at data/ijw_in_3.txt which contains a sparse 34 node graph -- since the list of edges is fairly long, we specify an output file with -o -- the greedy algorithm, and the recursive variant (method 5) both do poorly on this problem
+<pre>
+<div class=code>
+-> bmatch -w data/ijw_in_3.txt -u 17 -s 1 -v 1 -m 1
+ bmatch_ijw> returning 306 edges
+ MATCHING>
+    0    1    1
+    0    3    1
+    0    6    1
+    0    7    1
+    .    .    .
+    .    .    .
+    .    .    .
+   30   30    1
+   30   31    1
+   30   32    1
+   31   31    1
+ bmatch done:
+       method = exact solution using goblin mincost solver via subgraph complement
+   in # nodes = 34
+   in # edges = 595
+  out # edges = 289
+          wgt = 22.47
+  time (sec.) = 3
+
+
+
+-> bmatch -w data/ijw_in_3.txt -o data/ijw_out_3.txt -u 17 -s 1 -v 1 -m 3
+ bmatch_ijw> returning 284 edges
+ bmatch done:
+       method = greedy 1/2 approximation to maxwgt solution
+   in # nodes = 34
+   in # edges = 595
+  out # edges = 284
+          wgt = 11.57
+  time (sec.) = 1
+
+
+
+-> bmatch -w data/ijw_in_3.txt -o data/ijw_out_3.txt -u 17 -s 1 -v 1 -m 4
+ bmatch done:
+      method = greedy 1/2 approximation to maxwgt solution with recursion
+   in # nodes = 34
+   in # edges = 595
+  out # edges = 287
+          wgt = 11.59
+  time (sec.) = 0
+
+
+
+</div>
+</pre>
+    </li> 
+
+    <li>
+    <b>example 5</b>: on the other hand, the greedy algorithm and the recursive variant are much more effective on large graphs -- since this is where efficiency counts the most, we prefer these algorithms for large problems when the exact solution is not essential 
+<pre>
+<div class=code>
+-> bmatch -w data/ijw_in_5.txt -d data/degree_in_5.txt -o data/ijw_out_5.txt -s 1 -v 1 -m 1
+ bmatch_ijw> returning 2123 edges
+bmatch done:
+       method = exact solution using goblin mincost solver via subgraph complement
+   in # nodes = 200
+   in # edges = 4463
+  out # edges = 2340
+          wgt = 1.384e+04
+  time (sec.) = 182
+
+
+
+-> bmatch -w data/ijw_in_5.txt -d data/degree_in_5.txt -o data/ijw_out_5.txt -s 1 -v 1 -m 3
+ bmatch_ijw> returning 1504 edges
+ bmatch done:
+       method = greedy 1/2 approximation to maxwgt solution
+   in # nodes = 200
+   in # edges = 4463
+  out # edges = 1504
+          wgt = 8892
+  time (sec.) = 0
+
+
+
+-> bmatch -w data/ijw_in_5.txt -d data/degree_in_5.txt -o data/ijw_out_5.txt -s 1 -v 1 -m 4
+ bmatch_ijw> returning 1504 edges
+ bmatch_ijw> returning 375 edges
+ bmatch_ijw> returning 132 edges
+ bmatch_ijw> returning 50 edges
+ bmatch_ijw> returning 27 edges
+ bmatch_ijw> returning 5 edges
+ bmatch_ijw> returning 0 edges
+ bmatch done:
+       method = greedy 1/2 approximation to maxwgt solution with recursion
+   in # nodes = 200
+   in # edges = 4463
+  out # edges = 2093
+          wgt = 1.23e+04
+  time (sec.) = 1
+</div>
+</pre>
+    </li> 
+    <li>
+    <b>example 6</b>: this example demonstrates that the exact solution is NOT invariant to uniform weight increments or decrements -- consider the two problems that are solved below -- the second is identical to the first except that the weights are each incremented by 1 (the zero entries are preserved to exclude these edges from the solution) -- don't be alarmed by these running times, which are primarily due to my slow typing
+<pre>
+<div class=code>
+-> bmatch -v 1
+
+INPUT WEIGHTS(dense)>
+0 2.5 1
+2.5 0 1
+1   1 0
+
+INPUT DEGREES>
+1 1 2
+
+bmatch> solving problem ...
+ bmatch_ijw> returning 2 edges
+MATCHING>
+    0    1    0
+    1    0    0
+    0    0    0
+bmatch done:
+       method = exact solution using goblin mincost solver via subgraph complement
+   in # nodes = 3
+   in # edges = 3
+  out # edges = 1
+          wgt = 2.5
+  time (sec.) = 13
+
+
+
+-> bmatch -v 1
+
+INPUT WEIGHTS(dense)>
+0 3.5 2
+3.5 0 2
+2   2 0
+
+INPUT DEGREES>
+1 1 2
+
+bmatch> solving problem ...
+ bmatch_ijw> returning 1 edges
+MATCHING>
+    0    0    1
+    0    0    1
+    1    1    0
+bmatch done:
+       method = exact solution using goblin mincost solver via subgraph complement
+   in # nodes = 3
+   in # edges = 3
+  out # edges = 2
+          wgt = 4
+  time (sec.) = 14
+</div>
+</pre>
+    </li> 
+    <li>
+    <b>example 7</b>: this example demonstrates the min-cost solver (method 2) and also shows how its solution relates to the max-weight solution -- the weights will be the same as in example 6, but new degree bounds are chosen following: LB' = DEG - UB and UB' = DEG - LB, where DEG is the degree in the candidate graph -- for example, since node 1 has LB = 0, UB = 1, and has 2 potential edges where Wij>0, therefore LB' = 2 - 1 = 1 and UB' = 2 - 0 = 2 -- notice how the solutions are complementary to those shown in example 6
+<pre>
+<div class=code>
+-> bmatch -m 2 -v 1
+INPUT WEIGHTS(dense)>
+0 2.5 1 
+2.5 0 1
+1 1 0 
+
+INPUT DEGREES>
+1 2
+1 2
+0 2
+
+bmatch> solving problem ...
+ bmatch_ijw> returning 2 edges
+MATCHING>
+    0    0    1
+    0    0    1
+    1    1    0
+bmatch done:
+       method = exact mincost solution using goblin
+   in # nodes = 3
+   in # edges = 3
+  out # edges = 2
+          wgt = 2
+  time (sec.) = 15
+
+
+-> bmatch -m 2 -v 1
+INPUT WEIGHTS(dense)>
+0 3.5 2
+3.5 0 2
+2 2 0
+
+INPUT DEGREES>
+1 2
+1 2
+0 2
+
+bmatch> solving problem ...
+ bmatch_ijw> returning 1 edges
+MATCHING>
+    0    1    0
+    1    0    0
+    0    0    0
+bmatch done:
+       method = exact mincost solution using goblin
+   in # nodes = 3
+   in # edges = 3
+  out # edges = 1
+          wgt = 3.5
+  time (sec.) = 21
+</div>
+</pre>
+    </li> 
+
+
+
+
+</ul>
+
+
+<div class=btimes120page>
+Acknowledgements
+</div>
+
+<p class=page> 
+Many thanks to Vlad Shchogolev, Bert Huang and Blake Shaw for their code and examples.  Blake has helped to improve the robustness of the code.  Vlad implemented prototypes.  This tool integrates Bert's BP code directly. For a stand-alone BP implementation, please visit <a href="http://www.cs.columbia.edu/~bert">Bert's page</a>.
+<br>
+<br>
+This tool links to the impressive  <a href="http://www.math.uni-augsburg.de/~fremuth/goblin.html">Goblin Graph Library</a> and <a href="http://www.math.uni-augsburg.de/~fremuth/goblin.docs/LGPL">LGPL</a> licensing issues apply.  To experiment with this library, please download the source code directly from the Goblin site.  I would be happy to share the source that has been modified slightly for Mac OS X.
+</p>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    _uacct = "UA-2216067-1";
+    urchinTracker();
+</script>
+</body>
+</html>
+

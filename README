@@ -1,0 +1,210 @@
+#
+Bmatching Toolbox
+Version 0.6 - June 14, 2008
+by Vlad Shchogolev, Bert Huang, Stuart Andrews, and Blake Shaw
+#
+To use the command line tool on a supported system:
+
+    1. tar xvfz bmatch.tgz
+    2. cd bmatch
+    3. make
+    4. bmatch -h
+
+#
+To use the Matlab interface on a supported system:
+
+    1. tar xvfz bmatch.tgz
+    2. cd bmatch
+    3. make
+    4. matlab_bmatch
+    5. help bmatch
+
+#
+Usage> bmatch [-arg1 value] [-arg2 value] ...
+
+#
+Solves:
+       optimize_Yij sum_ij W_ij Y_ij  s.t. l_i <= sum_j Y_ij <= u_i, 1 <= i <= n
+       and Wij and Yij are symmetric
+
+#
+Arguments [with default values]:
+
+            -w -weights [NULL] input file, NULL => std. input
+            -d -degrees [NULL] input file, NULL => std. input
+            -o -output  [NULL] output file, NULL => std. output
+            -l -const_l [-1  ] positive integer, negative => std. input
+            -u -const_u [-1  ] positive integer, negative => std. input
+            -s -sparse  [0   ] 0 => matrix, 1 => IJW input format
+            -m -method  [1   ] selects algorithm
+            -v -verbose [0   ] positive integer
+
+#
+Algorithm: 
+
+    1. exact maxwgt solution using goblin via subgraph complement
+    2. exact mincost solution using goblin
+    3. greedy 1/2 approximation to maxwgt solution
+    4. greedy 1/2 approximation to maxwgt solution with recursion
+    5. bipartite relaxation to maxwgt solution using belief propagation
+
+
+#
+Example 4:
+bmatch -weights data/ijw_in_5.txt -degrees data/degree_in_5.txt -output data/ijw_out_5.txt -sparse 1 -method 4 -verbose 1
+           
+#
+Example 3:
+./bmatch -weights data/ijw_in_3.txt -degrees data/degree_in_3.txt -s 1 -m 1 -v 1
+./bmatch -weights data/ijw_in_3.txt -degrees data/degree_in_3.txt -s 1 -m 3 -v 1
+./bmatch -weights data/ijw_in_3.txt -degrees data/degree_in_3.txt -s 1 -m 4 -v 1
+./bmatch -weights data/ijw_in_3.txt -degrees data/degree_in_3.txt -s 1 -m 5 -v 1
+           
+#
+Example 2:
+./bmatch -w data/matrix_in_2.txt -u 2 -v 2 -m 3
+           
+#
+Example 1:
+./bmatch -w data/matrix_in_1.txt -u 2 -v 1
+           
+#
+Example 0:
+./bmatch 
+
+#
+Notes:
+
+       Self-loops are handled: a self-loop increases the degree of a node
+       by 2.  Weights must be positive (Wij >= 0).  Edges with zero-weight
+       (Wij==0) are not allowed to partake in the matching.
+
+       If the weights, degrees or output file is not specified, then the
+       corresponding input / output data is entered in / displayed to the
+       display.  The format should match the examples given in the data
+       directory.  Enter a blank line to terminate input of a given data.
+
+       The output weight is calculated as sum_{i<=j} Wij Yij, except when
+       belief propagation is used, whose output is not necessarily
+       symmetric.  For BP, the output weight is 0.5 * sum_{i,j} Wij Yij.
+
+       The lower bounds are ignored by methods 3-5. Bipartite relaxation
+       assumes that the degree upper bounds can be met with equality.
+
+#
+Known Issues:
+
+    - The is a compiler compatibility error that prevents me from compiling 
+      the MEX interface with older versions of Matlab e.g. version 6.5 (R13).
+
+    - The current BP implementation does not handle variable (bi not= bj) 
+      upper bounds, or bounds bi >= N-1
+
+    - The current BP implementation will frequently report:
+      "beliefprop.solve> Reached maximum iterations without converging"
+      We are working on a solution to this problem.
+
+
+#
+Troubleshooting:
+
+    - Error: the solvers produce unexpected results.  There may be valid 
+      problems that some of the methods can not handle.  I would like to hear
+      about these in order to make this tool more robust and universal.
+
+    - Error reporting that symbols can not be found:  This means that 
+      your (DY)LD_LIBRARY_PATH environment variables are not being set 
+      correctly the shell scripts ./bmatch or ./matlab_bmatch
+
+    - Error "bmatch: Command not found.":  This means that the shell command
+      sh is not located at /bin/sh.  You will need to correct the first line
+      in ./bmatch after typing make, or make link.
+
+    - Error "missing executable - no link created - try make bmatch" reported
+      from make: In this case, you can try making the executable yourself by 
+      typing: make bmatch.  Note that this does not build the supporting
+      libraries (e.g. goblin).  
+      
+    - Error "No rule to make target ...", or compilation fails immediately 
+      reporting missing files.  This is likely due to an invalid set of
+      dependencies in your Makefile. The solution is to type: make depend, 
+      ... (you should see a lot of output) ... then: make bmatch
+
+    - If compilation still fails, try typing: make clean, and then: make bmatch
+
+    - Errors reported upon linking while making bmatch.  It may be that the 
+      provided library is causing problems on your system.  You might want to 
+      try downloading and compiling the library yourself.  
+
+    - Compilation may fail if the library is not compatible with your compiler.
+
+    - If you are stuck, please contact Stuart Andrews.
+
+#
+These above instructions have been successfully applied on:
+
+    POWERPC-DARWIN:
+        1.5 GHz PowerPC G4
+        Mac OS X 10.5.1 Leopard
+        gcc version 4.0.1
+        GNU Make version 3.79.1
+      * MATLAB Version 6.5.0.1951 (R13)
+        echo $(OSTYPE) ... "darwin"
+        echo $(MACHTYPE) .. "powerpc"
+
+    INTEL-DARWIN:
+        2 GHz Intel Core Duo
+        Mac OS X 10.5.1 Leopard
+        gcc version 4.0.1
+        GNU Make version 3.79.1
+        MATLAB Version 7.4.0.287 (R2007a)
+        echo $(OSTYPE) ... "darwin"
+        echo $(MACHTYPE) ... "i386"
+
+    INTEL-LINUX:
+        1 GHz GenuineIntel Pentium III
+        Ubuntu 2.6.22-14.47-generic
+        gcc version 4.1.3
+        GNU Make 3.81
+        MATLAB Version 7.4.0.336 (R2007a)
+        echo $(OSTYPE) ... "linux"
+        echo $(MACHTYPE) ... "i486"
+    
+* Trouble compiling MEX with this version of Matlab.
+
+#
+Change log:
+
+    version 0.7 - Jun. 14 2008
+        - fixed method numbering in MEX version
+        - changed bmatch_matrix m-file to handle lower degree bounds
+
+    version 0.6 - May. 08 2008
+        - removed the NegatedWeights method
+        - changed order of algorithms specified by -method[-m] flag
+        - replaced -const_b[-b] flags with -const_l[-l] and -const_u[-u] 
+        - added support for lower bounds in addition to upper bounds when using 
+            exact solution methods (goblin)
+        - changed the automated scaling used by the exact solution methods
+            to preserve precision of the weights when passed to goblin
+        - fixed linux-32 bug (... error while loading shared libraries ...)
+        - updated the help files and the tutorial
+        - added an example 7 to the tutorial
+
+    version 0.5 - Feb. 02 2008
+        - added export stmt to ./bmatch script file
+        - fixed one minor and one MAJOR memory leak in delete_svecvec
+
+    version 0.4 - Jan. 28 2008
+        - fixed critical error with goblin weight scaling
+
+    version 0.3 - Jan. 24 2008
+        - changed Makefile and Makefile.conf to help diagnose make troubles
+
+    version 0.2 - Jan. 20 2008
+        - changed Makefile definitions for OS and MACHTYPE
+
+    version 0.1 - Jan. 19 2008
+        - initial code
+
+
